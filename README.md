@@ -2,7 +2,7 @@
 Autonomous AI C2
 
 
-#☢️Disclaimer☢️ 
+☢️Disclaimer☢️ 
 
 This tool is intended for authorized security testing and research purposes only. By using this tool, you agree to the following terms and conditions:
 
