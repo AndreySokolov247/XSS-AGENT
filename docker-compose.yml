@@ -1,0 +1,107 @@
+# Define the networks used by services
+networks:
+  xss_agent_net:
+    # Define custom network options if needed
+    driver: bridge
+
+# Define the services
+services:
+
+  # Agents service
+  agents:
+    # Build context for the Dockerfile
+    build:
+      context: ./agents
+    # Mount volumes for agent work directory
+    volumes:
+      - ./agents/work_agents:/work_directory
+    # Attach to the xss_agent_net network
+    networks:
+      - xss_agent_net
+
+  # Implant Builder service
+  implant_builder:
+    # Build context for the Dockerfile
+    build:
+      context: ./implant_builder
+    # Mount volumes for implant_builder work directory
+    volumes:
+      - ./implant_builder/implant_source:/implant
+    # Attach to the xss_agent_net network
+    networks:
+      - xss_agent_net
+
+  # Web server service
+  webserver:
+    # Build context for the Dockerfile
+    build:
+      context: ./web
+    # Expose ports for HTTP and HTTPS
+    ports:
+      - "80:80"
+      - "443:443"
+    # Dependencies on MySQL database service
+    depends_on:
+      - db
+    # Mount volumes for web content
+    volumes:
+      - ./web/www:/var/www/html
+    # Attach to the xss_agent_net network
+    networks:
+      - xss_agent_net
+
+  # MySQL database service
+  db:
+    # Build context for the Dockerfile
+    build:
+      context: ./db
+    # Mount volumes for database persistence
+    volumes:
+      - ./xss_agent_db:/var/lib/mysql
+    # Attach to the xss_agent_net network
+    networks:
+      - xss_agent_net
+
+  # phpMyAdmin service
+  phpmyadmin:
+    # Build context for the Dockerfile
+    build:
+      context: ./phpmyadmin
+    # Link to MySQL database service
+    links:
+      - db
+    # Dependencies on MySQL database service
+    depends_on:
+      - db
+    # Expose port for phpMyAdmin UI
+    ports:
+      - "8080:80"
+    # Attach to the xss_agent_net network
+    networks:
+      - xss_agent_net
+
+  # Tor service
+  tor:
+    # Build context for the Dockerfile
+    build:
+      context: ./tor
+    # Expose port for Tor
+    ports:
+      - "9050"
+    # Link to webserver service
+    links:
+      - webserver
+    # Dependencies on webserver service
+    depends_on:
+      - webserver
+    # Mount volumes for Tor keys
+    volumes:
+      - ./keys:/tor/service
+    # Attach to the xss_agent_net network
+    networks:
+      - xss_agent_net
+
+
+
+
+      

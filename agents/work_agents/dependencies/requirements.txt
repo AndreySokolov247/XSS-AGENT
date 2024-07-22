@@ -1,0 +1,3 @@
+crewai
+langchain
+ollama
