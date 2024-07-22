@@ -15,5 +15,5 @@ This tool is intended for authorized security testing and research purposes only
 By using this tool, you acknowledge that you have read and understood this disclaimer and agree to be bound by its terms and conditions.
 
 ---
-
+[Author: Mr_Stuxnot - xss.is ](https://xss.is/members/316490/)
 [README](docs/Xss%20Agent.pdf)
