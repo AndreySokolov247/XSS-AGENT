@@ -1,6 +1,8 @@
 # XSS-AGENT
 ## Autonomous AI C2
 
+[README](docs/Xss%20Agent.pdf) by [Mr_Stuxnot - xss.is](https://xss.is/members/316490/)
+
 ☢️**Disclaimer**☢️
 
 This tool is intended for authorized security testing and research purposes only. By using this tool, you agree to the following terms and conditions:
@@ -18,7 +20,5 @@ By using this tool, you acknowledge that you have read and understood this discl
 Watch the video on YouTube Demo1:
 
 [![Watch the video](https://img.youtube.com/vi/uelOVOkpc2E/0.jpg)](https://www.youtube.com/watch?v=uelOVOkpc2E)
-
-[README](docs/Xss%20Agent.pdf) by [Mr_Stuxnot - xss.is](https://xss.is/members/316490/)
 
 
