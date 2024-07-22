@@ -15,7 +15,7 @@ This tool is intended for authorized security testing and research purposes only
 By using this tool, you acknowledge that you have read and understood this disclaimer and agree to be bound by its terms and conditions.
 
 ---
-[Demo 1 :](https://www.youtube.com/embed/uelOVOkpc2E/)  
+[![Watch the video](https://img.youtube.com/vi/uelOVOkpc2E/0.jpg)](https://www.youtube.com/watch?v=uelOVOkpc2E)
 [README](docs/Xss%20Agent.pdf) by [Mr_Stuxnot - xss.is](https://xss.is/members/316490/)
 
 
